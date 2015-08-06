@@ -87,6 +87,7 @@ Rails.application.configure do
       :bucket => ENV['S3_BUCKET'],
       :access_key_id => ENV['S3_KEY'],
       :secret_access_key => ENV['S3_SECRET'],
+      :path => "/images/:id/:style.:extension",
       :url => ENV[':S3_DOMAIN_URL'],
     }
   }
