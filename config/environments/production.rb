@@ -91,6 +91,5 @@ Rails.application.configure do
       :url => ENV[':S3_DOMAIN_URL'],
     }
   }
-  client.setEndpoint("s3-ap-southeast-1.amazonaws.com")
   s3 = AWS::S3.new(:s3_endpoint => "s3-ap-southeast-1.amazonaws.com")
 end
