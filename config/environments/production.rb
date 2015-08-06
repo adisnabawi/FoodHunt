@@ -93,5 +93,4 @@ Rails.application.configure do
   }
   
   s3 = AWS::S3.new(:s3_endpoint => "s3-ap-southeast-1.amazonaws.com")
-  bucket = s3.buckets.create("my.eu.bucket")
 end
