@@ -19,9 +19,10 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
+  <br>
   <%= f.hidden_field :recipe_id %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'submitbtn' %>
   </div>
 </div>
 <% end %>

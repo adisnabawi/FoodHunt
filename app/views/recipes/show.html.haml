@@ -1,3 +1,4 @@
+
 .main_content
 	#recipe_top.row
 		.col-md-4
@@ -34,9 +35,9 @@
 				
 %h3 Comments
 - @comments.each do |comment|
-	%div
+	%div.ibox-title
 		%strong= comment.user_name
 		%br/
 		%p= comment.body
-		%p= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }
+		// %p= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }
 = render 'comments/form'

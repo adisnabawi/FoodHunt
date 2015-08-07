@@ -1,6 +1,13 @@
-<h1>Listing comments</h1>
+<script language=javascript>
+function goBck(){
+  window.history.go(-2);
+  
+}
 
-<table>
+</script>
+<h1>List comments</h1>
+
+<table class="table">
   <thead>
     <tr>
       <th>User name</th>
@@ -16,13 +23,14 @@
         <td><%= comment.user_name %></td>
         <td><%= comment.body %></td>
         <td><%= comment.recipe_id %></td>
-        <td><%= link_to 'Edit | ', edit_comment_path(comment) %></td>
-        <td><%= link_to ' Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--<td> link_to 'Edit | ', edit_comment_path(comment) %</td>-->
+        <!--<td> link_to ' Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<button class="submitbtn" onclick="goBck()">Return</button>
 
-<%= link_to 'New Comment', new_comment_path %>
+ <!--link_to 'New Comment', new_comment_path %>-->
