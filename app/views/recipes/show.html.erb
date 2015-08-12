@@ -1,16 +1,16 @@
 
-<script>
-      function initialize() {
-        var mapCanvas = document.getElementById('map');
-        var mapOptions = {
-          center: new google.maps.LatLng(44.5403, -78.5463),
-          zoom: 8,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(mapCanvas, mapOptions)
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+<!--<script>-->
+<!--      function initialize() {-->
+<!--        var mapCanvas = document.getElementById('map');-->
+<!--        var mapOptions = {-->
+<!--          center: new google.maps.LatLng(44.5403, -78.5463),-->
+<!--          zoom: 8,-->
+<!--          mapTypeId: google.maps.MapTypeId.ROADMAP-->
+<!--        }-->
+<!--        var map = new google.maps.Map(mapCanvas, mapOptions)-->
+<!--      }-->
+<!--      google.maps.event.addDomListener(window, 'load', initialize);-->
+<!--    </script>-->
 <% if user_signed_in? %>
   <div class="main_content">
     <div class="row" id="recipe_top">
@@ -69,14 +69,45 @@
     </div>
   </div>
   <div class="ibox-title">
-  	<form action="#" onsubmit="showAddress(this.address.value); return false">
+  	<!--<form action="#" onsubmit="showAddress(this.address.value); return false">-->
      
-      <p>
-        <input type="text" name="address" value="Cyberjaya, Malaysia" />
-        <input type="submit" value="Go!" />
-      </p>
-      <div id="map" style="height: 400px"></div>
-    </form>
+   <!--   <p>-->
+   <!--     <input type="text" name="address" value="Cyberjaya, Malaysia" />-->
+   <!--     <input type="submit" value="Go!" />-->
+   <!--   </p>-->
+   <!--   <div id="map" style="height: 400px"></div>-->
+   <!-- </form>-->
+    
+
+   <input type="text" id="search" class="searchform">
+   <input type="button" onclick="geocode();" value="Search" class="submitbtn">
+   
+   <br><br>
+	<div id="map" style="height: 400px;"></div> 
+   <script type="text/javascript"> 
+     var map = new google.maps.Map(document.getElementById('map'), { 
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
+        center: new google.maps.LatLng(42.49, 18.46),
+        zoom: 6
+     });
+
+     var geocoder = new google.maps.Geocoder();
+
+     function geocode () {
+        geocoder.geocode({
+           'address': document.getElementById('search').value
+        }, 
+        function(results, status) {
+           if(status == google.maps.GeocoderStatus.OK) {
+              new google.maps.Marker({
+                 position: results[0].geometry.location,
+                 map: map
+              });
+              map.setCenter(results[0].geometry.location);
+           }
+        });
+     }   
+   </script> 
   	</div>
   	
   <h3>Comments</h3>
