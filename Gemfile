@@ -11,7 +11,7 @@ gem 'haml', '~> 4.0.5'
 gem 'simple_form', '~> 3.0.2'
 gem 'paperclip', '~> 4.2.0'
 
-
+gem 'google-api-client'
 gem 'geocoder'
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'cocoon', '~> 1.2.6'

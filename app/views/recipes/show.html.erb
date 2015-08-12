@@ -1,41 +1,15 @@
 
-    <script type="text/javascript">
-
-    var map = null;
-    var geocoder = null;
-
-    function initialize() {
-      if (GBrowserIsCompatible()) {
-        map = new GMap2(document.getElementById("map_canvas"));
-        map.setCenter(new GLatLng(37.4419, -122.1419), 1);
-        map.setUIToDefault();
-        geocoder = new GClientGeocoder();
+<script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
       }
-    }
-
-    function showAddress(address) {
-      if (geocoder) {
-        geocoder.getLatLng(
-          address,
-          function(point) {
-            if (!point) {
-              alert(address + " not found");
-            } else {
-              map.setCenter(point, 15);
-              var marker = new GMarker(point, {draggable: true});
-              map.addOverlay(marker);
-              GEvent.addListener(marker, "dragend", function() {
-                marker.openInfoWindowHtml(marker.getLatLng().toUrlValue(6));
-              });
-              GEvent.addListener(marker, "click", function() {
-                marker.openInfoWindowHtml(marker.getLatLng().toUrlValue(6));
-              });
-        GEvent.trigger(marker, "click");
-            }
-          }
-        );
-      }
-    }
+      google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 <% if user_signed_in? %>
   <div class="main_content">
@@ -98,10 +72,10 @@
   	<form action="#" onsubmit="showAddress(this.address.value); return false">
      
       <p>
-        <input type="text" style="width:350px" name="address" value="Cyberjaya, Malaysia" />
+        <input type="text" name="address" value="Cyberjaya, Malaysia" />
         <input type="submit" value="Go!" />
       </p>
-      <div id="map_canvas" style="width: 600px; height: 400px"></div>
+      <div id="map" style="height: 400px"></div>
     </form>
   	</div>
   	
