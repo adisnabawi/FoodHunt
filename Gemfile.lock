@@ -55,6 +55,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.1)
+    geocoder (1.2.9)
     haml (4.0.5)
       tilt
     hike (1.2.3)
@@ -156,6 +157,7 @@ DEPENDENCIES
   cocoon (~> 1.2.6)
   coffee-rails (~> 4.0.0)
   devise (~> 3.3.0)
+  geocoder
   haml (~> 4.0.5)
   jbuilder (~> 2.0)
   jquery-rails
