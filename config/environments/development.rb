@@ -37,4 +37,11 @@ Rails.application.configure do
 
   # Needed for Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
+  config.action_mailer.smtp_settings = {
+  :address   => "smtp.mandrillapp.com",
+  :port      => 587,
+  :user_name => ENV["adisazizan@gmail.com"],
+  :password  => ENV["4pbkGx8NFIWIbPEc-6K1JA"]
+}
 end
