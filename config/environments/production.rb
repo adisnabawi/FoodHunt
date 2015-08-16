@@ -81,13 +81,11 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-config.action_mailer.smtp_settings = {
-  :address   => "smtp.mandrillapp.com",
-  :port      => 587,
-  :user_name => ENV["adisazizan@gmail.com"],
-  :password  => ENV["4pbkGx8NFIWIbPEc-6K1JA"]
-}
+# ActionMailer::Base.delivery_method = :smtp
 
+# MandrillMailer.configure do |config|
+#   config.api_key = ENV['4pbkGx8NFIWIbPEc-6K1JA']
+# end
 
   # Sets paperclip to upload images to Amazon S3
   config.paperclip_defaults = {

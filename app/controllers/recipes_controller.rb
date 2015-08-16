@@ -3,7 +3,10 @@ class RecipesController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
-		@recipe = Recipe.all.order("created_at DESC")
+		## perform a paginated query:
+		@recipe = Recipe.paginate(:page => params[:page], :per_page => 9).order('created_at DESC')
+		
+		##@recipe = Recipe.all.order('created_at DESC')
 	end
 
 	def show
@@ -15,8 +18,8 @@ class RecipesController < ApplicationController
 
 	def create
 		@recipe = current_user.recipes.build(recipe_params)
-
 		if @recipe.save
+			PostMailer.post_created(current_user).deliver
 			redirect_to @recipe, notice: "Successfully created new restaurant"
 		else
 			render 'new'

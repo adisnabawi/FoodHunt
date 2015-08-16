@@ -36,12 +36,16 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # Needed for Devise
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.delivery_method = :smtp
   
-  config.action_mailer.smtp_settings = {
-  :address   => "smtp.mandrillapp.com",
-  :port      => 587,
-  :user_name => ENV["adisazizan@gmail.com"],
-  :password  => ENV["4pbkGx8NFIWIbPEc-6K1JA"]
-}
+#     config.action_mailer.smtp_settings = {
+#   :address   => "smtp.mandrillapp.com",
+#         :port      => 587,
+#         :user_name => "adisazizan@gmail.com",
+#         :password  => "4pbkGx8NFIWIbPEc-6K1JA",
+#         :authentication => :plain,
+#         :openssl_verify_mode => 'none',
+#         :enable_starttls_auto => true
+# }
 end
