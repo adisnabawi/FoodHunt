@@ -4,13 +4,18 @@ class RecipesController < ApplicationController
 
 	def index
 		## perform a paginated query:
+		if params[:search]
+	    @recipe = Recipe.search(params[:search]).paginate(:page => params[:page], :per_page => 9).order("created_at DESC")
+	 
+	    else
 		@recipe = Recipe.paginate(:page => params[:page], :per_page => 9).order('created_at DESC')
-		
+		end
 		##@recipe = Recipe.all.order('created_at DESC')
 	end
 
 	def show
 	end
+	
 
 	def new
 		@recipe = current_user.recipes.build
