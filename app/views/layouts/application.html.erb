@@ -27,9 +27,9 @@
           <a class="navbar-brand" href="/">FoodHunt</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" style="padding-left: 20px;">
             
-            <li>
+            <li >
              <%= form_tag(recipes_path, :method => "get", class: "navbar-form", id: "search-form") do %>
               
                 <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search Restaurant" %>
