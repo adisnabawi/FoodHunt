@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
+		
 		## perform a paginated query:
 		if params[:search]
 	    @recipe = Recipe.search(params[:search]).paginate(:page => params[:page], :per_page => 9).order("created_at DESC")
@@ -16,6 +17,11 @@ class RecipesController < ApplicationController
 	def show
 	end
 	
+	def upvote
+  @recipe = Recipe.find(params[:id])
+  @recipe.upvote_by current_user
+  redirect_to recipe_path
+	end
 
 	def new
 		@recipe = current_user.recipes.build
@@ -51,6 +57,7 @@ class RecipesController < ApplicationController
 
 	def recipe_params
 		params.require(:recipe).permit(:title, :description, :image, ingredients_attributes: [:id, :name, :_destroy], directions_attributes: [:id, :step, :_destroy])
+		
 	end
 
 	def find_recipe

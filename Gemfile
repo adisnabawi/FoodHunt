@@ -14,7 +14,7 @@ gem 'paperclip', '~> 4.2.0'
 gem 'google-api-client'
 gem 'mandrill_mailer'
 gem 'will_paginate', '~> 3.0.5'
-
+gem 'acts_as_votable'
 gem 'geocoder'
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'cocoon', '~> 1.2.6'
