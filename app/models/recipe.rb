@@ -18,7 +18,6 @@ class Recipe < ActiveRecord::Base
 	
 	  def self.search(query)
 	    # where(:title, query) -> This would return an exact match of the query
-	    where("description like ?", "%#{query}%")
-	    where("title like ?", "%#{query}%")
+	    where("description || title like ?", "%#{query}%") 
 	  end
 end
