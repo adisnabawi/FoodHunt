@@ -16,7 +16,6 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 @mixin box-shadow {
 	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
 	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
@@ -152,10 +151,33 @@ h4 {
 .add-button {
 	margin-top: 25px;
 }
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
 
+.navbar-default .navbar-nav > li > a:hover {
+    color: #1EC7A3;
+}
+.navbar-default .navbar-brand {
+    color: #fff;
+}
 
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #1EC7A3;
+}
+a:hover {
+    background: transparent;
+    color:#1EC7A3;
+}
+
+.footer-distributed .footer-right a:hover{
+	background-color:#1EC7A3;
+}
+.footer-distributed p.footer-links a:hover {
+	color:#1EC7A3;
+}
 .footer-distributed{
-	background-color: #292c2f;
+	background-color: #000;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -170,6 +192,9 @@ h4 {
 	color:  #8f9296;
 	font-size: 14px;
 	margin: 0;
+}
+.light{
+	    font-weight: lighter;
 }
 
 /* Footer links */
@@ -357,3 +382,59 @@ h4 {
 .intro-message > h3 {
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
 }
+
+.pagination {
+  background: transparent;
+  cursor: default;
+  /* self-clearing method: */ }
+  .pagination a, .pagination span, .pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .pagination .disabled {
+    color: #999999;
+    border: 1px solid #1EC7A3; }
+  .pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #000;
+    color: white;
+    border: 1px solid #000; }
+  .pagination a {
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #000; }
+    .pagination a:hover, .pagination a:focus {
+      color: #1EC7A3;
+      border-color: #1EC7A3; }
+  .pagination .page_info {
+    background: #000;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .pagination .page_info b {
+      color: #000033;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em; }
+  .pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .pagination {
+    height: 1%; }
+  *:first-child + html .pagination {
+    overflow: hidden; }
+    
+    
+   .btn-primary {
+    color: white;
+    background-color: #1EC7A3;
+    border-color: #1EC7A3;
+}
+
+    
